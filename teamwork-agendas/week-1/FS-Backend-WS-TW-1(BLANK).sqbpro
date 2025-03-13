@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="H:/Drive'ım/Module 3/Class/test Class1.sqlite3" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="browser query structure pragmas" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2749"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Track" custom_title="0" dock_id="1" table="4,5:mainTrack"/><dock_state state="000000ff00000000fd000000010000000200000772000003a6fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000007720000019900ffffff000007720000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="70"/><column index="2" value="300"/><column index="3" value="68"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Artist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="68"/><column index="2" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Genre" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="68"/><column index="2" value="151"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="77"/><column index="2" value="92"/><column index="3" value="95"/><column index="4" value="300"/><column index="5" value="159"/><column index="6" value="89"/><column index="7" value="119"/><column index="8" value="125"/><column index="9" value="49"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="65"/><column index="2" value="300"/><column index="3" value="70"/><column index="4" value="99"/><column index="5" value="68"/><column index="6" value="300"/><column index="7" value="93"/><column index="8" value="71"/><column index="9" value="74"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">-- 6. SORU WHERE KULLANIMI
+
+
+-- 6. SORU HAVING KULLANIMI
+
+
+-- 6. SORU HAVING &amp; WHERE BİRLİKTE KULLANIMI
+
+
+-- 7. SORU GROUP BY KULLANIMI
+
+
+-- 7. SORU HAVING KULLANIMI
+
+
+
+-- SQL STATEMENTS --
+
+--? 1: WRITE A QUERY THAT RETURNS TRACK NAME AND ITS COMPOSER FROM TRACKS TABLE. (TRACKS tablosundan şarkı adını ve bestecisini getiren bir sorgu yazın.)
+
+SELECT Name, Composer
+FROM Track;
+
+--? 2: WRITE A QUERY THAT RETURNS ALL COLUMNS FROM TRACK TABLE (TRACK tablosundaki tüm sütunları getiren bir sorgu yazın.)
+
+SELECT *
+FROM Track;
+
+--? 3: WRITE A QUERY THAT RETURNS THE UNIQUE NAME OF COMPOSERS OF EACH TRACK (Her şarkının benzersiz besteci adlarını getiren bir sorgu yazın.)
+
+SELECT DISTINCT Composer
+FROM Track
+WHERE Composer IS NOT NULL;
+
+--? 4: WRITE A QUERY THAT RETURNS UNIQUE ALBUMID, MEDIATYPEID FROM TRACK TABLE (TRACK tablosundan benzersiz ALBUMID ve MEDIATYPEID değerlerini getiren bir sorgu yazın.)
+
+SELECT DISTINCT AlbumId, MediaTypeId
+FROM Track;
+
+--? 5: WRITE A QUERY THAT RETURNS TRACK NAME AND TRACKID OF 'Jorge Ben' ('Jorge Ben' adlı sanatçının şarkı adını ve TRACKID bilgisini getiren bir sorgu yazın.)
+
+SELECT Name, TrackId
+FROM Track
+WHERE Composer = 'Jorge Be';
+
+--? 6: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS GREATER THAN $25 (Toplam tutarı $25'ten fazla olan faturaların tüm bilgilerini getiren bir sorgu yazın.)
+
+SELECT *
+FROM Invoice
+WHERE Total &gt; 25;
+
+--? 7: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS LESS THAN $15. JUST RETURN 5 ROWS. (Toplam tutarı $15'ten az olan faturaların tüm bilgilerini getiren ve sadece 5 satır döndüren bir sorgu yazın.)
+
+SELECT *
+FROM Invoice
+WHERE Total &lt; 15
+LIMIT 5;
+
+--? 8: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS GREATER THAN $10. THEN SORT THE TOTAL AMOUNTS IN DESCENDING ORDER, LASTLY DISPLAY TOP 2 ROWS (Toplam tutarı $10'dan fazla olan faturaların tüm bilgilerini getirin. Daha sonra toplam tutara göre azalan şekilde sıralayın ve ilk 2 satırı gösterin.)
+
+SELECT *
+FROM Invoice
+WHERE Total &gt; 10
+ORDER BY Total DESC
+LIMIT 2;
+
+--? 9: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH BILLING COUNTRY IS NOT CANADA. THEN SORT THE TOTAL AMOUNTS IN ASCENDING ORDER, LASTLY DISPLAY TOP 10 ROWS (Fatura bilgileri arasında fatura ülkesi Kanada olmayan kayıtları getirin. Daha sonra toplam tutara göre artan şekilde sıralayın ve ilk 10 satırı gösterin.)
+
+SELECT *
+FROM Invoice
+WHERE BillingCountry NOT LIKE 'Canada'
+ORDER BY Total ASC
+LIMIT 10;
+
+--? 10: WRITE A QUERY THAT RETURNS INVOICEID, CUSTOMERID AND TOTAL DOLLAR AMOUNT FOR EACH INVOICE. THEN SORT THEM FIRST BY CUSTOMERID IN ASCENDING, THEN TOTAL DOLLAR AMOUNT IN DESCENDING ORDER. (Fatura numarası (INVOICEID), müşteri numarası (CUSTOMERID) ve toplam dolar tutarını getiren bir sorgu yazın. Son olarak, önce müşteri numarasına göre artan, ardından toplam dolar tutarına göre azalan şekilde sıralayın.)
+
+SELECT InvoiceId, CustomerId, Total
+FROM Invoice
+ORDER BY CustomerId ASC, Total DESC;
+
+--? 11: WRITE A QUERY THAT RETURNS ALL TRACK NAMES THAT START WITH 'B' AND END WITH 'S' ('B' harfiyle başlayıp 'S' harfiyle biten tüm şarkı adlarını getiren bir sorgu yazın.)
+
+SELECT Name
+FROM Track
+WHERE Name LIKE 'B%S';
+
+--? 12: WRITE A QUERY THAT RETURNS THE NEWEST DATE AMONG THE INVOICE DATES BETWEEN 2008 AND 2011 (2008 ile 2011 yılları arasındaki en yeni fatura tarihini getiren bir sorgu yazın.)
+
+SELECT InvoiceDate
+FROM Invoice
+WHERE InvoiceDate BETWEEN '2008/01/01' AND '2011/12/31'
+ORDER BY InvoiceDate DESC
+LIMIT 1;
+
+--? 13: WRITE A QUERY THAT RETURNS THE FIRST AND LAST NAME OF THE CUSTOMETS WHO HAVE ORDERS FROM NORWAY AND BELGIUM (Norveç ve Belçika'dan sipariş veren müşterilerin ad ve soyadlarını getiren bir sorgu yazın.)
+
+SELECT FirstName, LastName, Country
+FROM Customer
+WHERE Country IN ('Norway','Belgium');
+
+--? 14: WRITE A QUERY THAT RETURNS THE TRACK NAMES OF 'ZAPPA' ('Zappa' adlı sanatçının şarkı adlarını getiren bir sorgu yazın.)
+
+SELECT Name, Composer
+FROM Track
+WHERE Composer LIKE '%zAPPA';
+
+--? 15: HOW MANY TRACKS AND INVOICES ARE THERE IN THE DIGITAL MUSIC (Dijital müzik mağazasında kaç şarkı ve kaç fatura olduğunu getiren bir sorgu yazın.)
+
+SELECT COUNT(*)
+FROM Track
+UNION
+SELECT COUNT(*)
+FROM Invoice;
+
+--? 16: HOW MANY COMPOSERS ARE THERE IN THE DIGITAL MUSIC STORE (Dijital müzik mağazasında kaç besteci olduğunu getiren bir sorgu yazın.)
+
+SELECT COUNT(DISTINCT Composer)
+FROM Track;
+
+--? 17: HOW MANY TRACKS DOES EACH ALBUM HAVE, DISPLAY ALBUMID AND NUMBER OF TRACKS SORTED FROM HIGHEST TO LOWEST (Her albümde kaç şarkı olduğunu getiren ve albüm kimliği (ALBUMID) ile şarkı sayısını en çoktan en aza sıralayan bir sorgu yazın.)
+
+SELECT AlbumId, COUNT(*)
+FROM Track
+GROUP BY AlbumId
+ORDER BY COUNT(*) DESC;
+
+--? 18: WRITE A QUERY THAT RETURNS TRACK NAME HAVING THE MINIMUM AND MAXIMUM DURATION, DISPLAY SEPERATELY (En kısa ve en uzun süreye sahip şarkıları getiren iki ayrı sorgu yazın.)
+
+SELECT Name, MIN(Milliseconds) Min, MAX(Milliseconds) Max
+FROM Track;
+
+SELECT Name, Milliseconds
+FROM Track
+WHERE Milliseconds = (SELECT MIN(Milliseconds) FROM Track)
+UNION
+SELECT Name, Milliseconds
+FROM Track
+WHERE Milliseconds = (SELECT MAX(Milliseconds) FROM Track);
+
+--? 19: WRITE A QUERY THAT RETURNS THE TRACKS HAVING DURATION LESS THAN THE AVERAGE DURATION (Ortalama süreden daha kısa olan şarkıları getiren bir sorgu yazın.)
+
+SELECT *
+FROM Track
+WHERE Milliseconds &lt; (SELECT AVG(Milliseconds)
+FROM Track);
+	
+--? 20: WRITE A QUERY THAT RETURNS THE TOTAL NUMBER OF EACH COMPOSER’s TRACK. (Her bestecinin toplam kaç şarkısı olduğunu getiren bir sorgu yazın.)
+
+SELECT Composer, COUNT(Composer) track_count
+FROM Track
+WHERE Composer IS NOT NULL
+GROUP BY Composer
+ORDER BY track_count DESC;
+
+--? 21: WRITE A QUERY THAT RETURNS THE GENRE OF EACH TRACK. (Her şarkının türünü getiren bir sorgu yazın.)
+
+SELECT Track.Name AS TrackName, Genre.Name AS GenreName
+FROM Track
+JOIN Genre ON Track.GenreId = Genre.GenreId;
+
+--? 22: WRITE A QUERY THAT RETURNS THE ARTIST’s ALBUM INFO. (Sanatçıların albüm bilgilerini getiren bir sorgu yazın.)	
+
+SELECT Artist.Name, Album.Title, Album.AlbumId, Artist.ArtistId
+FROM Artist
+JOIN Album
+ON Artist.ArtistId = Album.ArtistId
+ORDER BY Artist.Name;
+
+--? 23: WRITE A QUERY THAT RETURNS THE MINIMUM DURATION OF THE TRACK IN EACH ALBUM. DISPLAY ALBUMID, ALBUM TITLE AND DURATION OF THE TRACK. THEN SORT THEM FROM HIGHEST TO LOWEST (Her albümdeki en kısa süreli şarkıyı getiren bir sorgu yazın. Albüm kimliği (ALBUMID), albüm başlığı ve şarkı süresi bilgilerini gösterin. Son olarak sürelere göre en uzundan en kısaya sıralayın.)
+
+SELECT Track.AlbumId, Title, MIN(Milliseconds)
+FROM Track
+JOIN Album
+ON Track.AlbumId = Album.AlbumId
+GROUP BY Track.AlbumId, Album.Title
+ORDER BY MIN(Track.Milliseconds) DESC;
+
+--? 24: WRITE A QUERY THAT RETURNS ALBUMS WHOSE TOTAL DURATION IS HIGHER THAN 60 MIN. DISPLAY ALBUM TITLE AND THEIR DURATIONS. THEN SORT THE RESULT FROM HIGHEST TO LOWEST (Toplam süresi 60 dakikadan fazla olan albümleri getiren bir sorgu yazın. Albüm başlığı ve toplam süreyi gösterin. Son olarak süreye göre en uzun albümden en kısaya doğru sıralayın.)
+
+SELECT Title, SUM(Milliseconds)
+FROM Track
+JOIN Album
+ON Track.AlbumId = Album.AlbumId
+GROUP BY Track.AlbumId
+HAVING SUM(Milliseconds) &gt; 3600000
+ORDER BY SUM(Milliseconds) DESC;
+
+--? 25: WRITE A QUERY THAT RETURNS TRACKID, TRACK NAME AND ALBUMID INFO OF THE ALBUM WHOSE TITLE ARE ‘Prenda Minha’, 'Heart of the Night' AND 'Out Of Exile'. ('Prenda Minha', 'Heart of the Night' ve 'Out Of Exile' adlı albümlerde bulunan şarkıların şarkı kimliği (TRACKID), şarkı adı ve albüm kimliği (ALBUMID) bilgilerini getiren bir sorgu yazın.)
+
+SELECT TrackId, Name, AlbumId
+FROM Track
+WHERE AlbumId IN (
+SELECT AlbumId
+FROM Album
+WHERE Title IN('Prenda Minha', 'Heart of the Night','Out Of Exile'));
+
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

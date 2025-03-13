@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="H:/Drive'ım/Module 3/Class/test Class1.sqlite3" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="browser query structure pragmas" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3487"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Track" custom_title="0" dock_id="1" table="4,5:mainTrack"/><dock_state state="000000ff00000000fd00000001000000020000054800000266fc0100000001fb000000160064006f0063006b00420072006f0077007300650031010000000000000548000001c500ffffff000005480000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="86"/><column index="2" value="300"/><column index="3" value="80"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Artist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="80"/><column index="2" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Customer" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="112"/><column index="3" value="103"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="159"/><column index="7" value="61"/><column index="8" value="119"/><column index="9" value="109"/><column index="10" value="159"/><column index="11" value="151"/><column index="12" value="239"/><column index="13" value="130"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="113"/><column index="2" value="98"/><column index="4" value="159"/><column index="5" value="102"/><column index="6" value="96"/><column index="7" value="90"/><column index="8" value="223"/><column index="9" value="87"/><column index="10" value="61"/><column index="11" value="81"/><column index="12" value="109"/><column index="13" value="143"/><column index="14" value="143"/><column index="15" value="199"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Genre" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="83"/><column index="2" value="151"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="93"/><column index="2" value="112"/><column index="3" value="115"/><column index="4" value="300"/><column index="5" value="159"/><column index="6" value="112"/><column index="7" value="132"/><column index="8" value="160"/><column index="9" value="60"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="InvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="127"/><column index="2" value="93"/><column index="3" value="80"/><column index="4" value="92"/><column index="5" value="87"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="MediaType" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="123"/><column index="2" value="223"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Playlist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="94"/><column index="2" value="215"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PlaylistTrack" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="94"/><column index="2" value="80"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="80"/><column index="2" value="300"/><column index="3" value="86"/><column index="4" value="123"/><column index="5" value="83"/><column index="6" value="300"/><column index="7" value="115"/><column index="8" value="71"/><column index="9" value="92"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- 6. SORU WHERE KULLANIMI
+SELECT * FROM Track 
+WHERE Composer = 'AC/DC'; 
+
+-- 6. SORU HAVING KULLANIMI
+SELECT Composer, SUM(UnitPrice) 
+FROM Track
+Group By Composer
+HAVING SUM(UnitPrice) &gt; 20
+
+-- 6. SORU HAVING &amp; WHERE BİRLİKTE KULLANIMI
+SELECT Composer, SUM(UnitPrice)
+FROM Track
+WHERE Composer IN ('Steve Harris','Miles Davis')
+GROUP BY Composer
+HAVING SUM(UnitPrice) &gt; 30;
+
+-- 7. SORU GROUP BY KULLANIMI
+SELECT Composer, SUM(UnitPrice)
+FROM Track
+GROUP BY Composer;
+
+-- 7. SORU HAVING KULLANIMI
+SELECT Composer, SUM(UnitPrice)
+FROM Track
+GROUP BY Composer
+HAVING SUM(UnitPrice) &gt; 30;
+
+-- 10. SORU INDEX ile HIZLI ARAMA
+
+SELECT * FROM Track WHERE Composer = 'AC/DC';
+
+-- SQL STATEMENTS --
+-- 1. SORU: WRITE A QUERY THAT RETURNS TRACK NAME AND ITS COMPOSER FROM TRACKS TABLE
+SELECT Name, Composer FROM Track; -- SELECT hangi sütunları seçeceğimizi belirler, Name ve Composer seçtiğimiz sütunlar, FROM ise verileri hangi tablodan alacağımızı belirler
+
+-- 2. SORU: WRITE A QUERY THAT RETURNS ALL COLUMNS FROM TRACK TABLE
+SELECT * FROM Track; -- SELECT Sütun Seçimi, * Tüm Sütunlar, FROM Hangi Tablo, Track tablosu
+
+-- 3. SORU: WRITE A QUERY THAT RETURNS THE UNIQUE NAME OF COMPOSERS OF EACH TRACK
+SELECT DISTINCT Composer FROM Track; -- SELECT Hangi Sütun, DISTINCT Aynı Değerleri Sadece 1 Kez Göster, Composer Seçilen Sütun, FROM Track seçilen tablo
+
+-- 4. SORU: WRITE A QUERY THAT RETURNS UNIQUE ALBUMID, MEDIATYPEID FROM TRACK TABLE
+SELECT DISTINCT AlbumId, MediaTypeId FROM Track; 
+
+-- 5. SORU: WRITE A QUERY THAT RETURNS TRACK NAME AND TRACKID OF 'Jorge Ben'
+SELECT Name, TrackId -- Sütunlar
+FROM Track -- Tablo
+WHERE Composer = 'Jorge Be' -- Composer
+
+-- 6. SORU: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS GREATER THAN $25
+SELECT * -- Tablodaki tüm sütunlar
+FROM Invoice -- Verilerin alınacağı tablo Invoice
+WHERE total &gt; 25; -- Toplam tutarı 25'ten büyük olanlar
+
+-- 7. SORU: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS LESS THAN $15. JUST RETURN 5 ROWS.
+SELECT * -- Tablodaki tüm sütunlar
+FROM Invoice -- Verilerin alınacağı tablo Invoice
+WHERE total &lt; 15 -- Toplam tutarı 15'ten küçük olanlar
+LIMIT 5; -- Sonuç listesindeki ilk 5 kayıt
+
+-- 8. SORU: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH TOTAL AMOUNT IS GREATER THAN $10. THEN SORT THE TOTAL AMOUNTS IN DESCENDING ORDER, LASTLY DISPLAY TOP 2 ROWS
+SELECT * -- Tablodaki tüm sütunlar
+FROM Invoice -- Verilerin alınacağı tablo
+WHERE total &gt; 10 -- Toplam tutarı 10'dan büyük olanlar
+ORDER BY total DESC -- Tutarı büyükten küçüğe sırala
+LIMIT 2; -- Sadece en yüksek 2 sonucu göster
+
+-- 9. SORU: WRITE A QUERY THAT RETURNS ALL INFO OF THE INVOICES OF WHICH BILLING COUNTRY IS NOT CANADA. THEN SORT THE TOTAL AMOUNTS IN ASCENDING ORDER, LASTLY DISPLAY TOP 10 ROWS
+SELECT * -- Tablodaki tüm veriler
+FROM Invoice -- Verilerin alınacağı tablo
+WHERE NOT BillingCountry = 'CANADA' -- Kanada'dan gelen faturalar hariç
+ORDER BY total ASC -- Küçükten büyüğe doğru sıralama
+LIMIT 10; -- Sadece ilk 10 sonuç
+
+/*10. SORU: WRITE A QUERY THAT RETURNS INVOICEID, CUSTOMERID AND TOTAL DOLLAR AMOUNT FOR EACH INVOICE. 
+THEN SORT THEM FIRST BY CUSTOMERID IN ASCENDING, THEN TOTAL DOLLAR AMOUNT IN DESCENDING ORDER */
+
+SELECT InvoiceId, CustomerId, total -- Belirli 3 sütun
+FROM Invoice -- Tablo
+ORDER BY CustomerId, total DESC; -- CustomerId'ye göre sırala, daha sonra her müşteri için Total değerine göre büyükten küçüğe sırala
+
+--11. SORU: WRITE A QUERY THAT RETURNS ALL TRACK NAMES THAT START WITH 'B' AND END WITH 'S'
+SELECT Name -- Hangi sütun
+FROM Track -- Hangi tablo
+WHERE Name LIKE 'B%s'; -- Başlangıç B bitiş S harfi şartı
+-- WHERE Name LIKE 'B%' AND Name LIKE '%s'
+
+--12. SORU: WRITE A QUERY THAT RETURNS THE NEWEST DATE AMONG THE INVOICE DATES BETWEEN 2008 AND 2011
+SELECT InvoiceDate -- Hangi sütun
+FROM Invoice -- Hangi tablo
+WHERE InvoiceDate BETWEEN '2008-01-01' AND '2012-01-01' -- Fatura tarihi filtreleme
+ORDER BY InvoiceDate DESC -- Tarihleri büyükten küçüğe(en yeniden eskiye) sırala
+LIMIT 1; -- En büyük(en yeni) tarihi getir
+
+--13. SORU: WRITE A QUERY THAT RETURNS THE FIRST AND LAST NAME OF THE CUSTOMETS WHO HAVE ORDERS FROM NORWAY AND BELGIUM
+SELECT FirstName, LastName -- Hangi sütun
+FROM Customer -- Hangi tablo
+WHERE Country In ('Belgium','Norway'); -- Belgium veya Norway filtresi
+
+--14. SORU: WRITE A QUERY THAT RETURNS THE TRACK NAMES OF 'ZAPPA'
+Select Composer, Name -- Sütun
+FROM Track -- Tablo
+WHERE Composer LIKE '%Zappa'; -- Filtre
+
+--15. SORU: HOW MANY TRACKS AND INVOICES ARE THERE IN THE DIGITAL MUSIC
+SELECT
+	(SELECT COUNT(*)
+FROM Track),
+	(SELECT COUNT(*)
+FROM Invoice);
+
+-- 16. SORU: HOW MANY COMPOSERS ARE THERE IN THE DIGITAL MUSIC STORE
+
+SELECT COUNT (DISTINCT Composer)
+FROM Track;  
+
+-- 17. SORU: HOW MANY TRACKS DOES EACH ALBUM HAVE, DISPLAY ALBUMID AND NUMBER OF TRACKS SORTED FROM HIGHEST TO LOWEST
+
+SELECT AlbumId,
+COUNT(*) number_of_tracks
+FROM Track
+GROUP BY AlbumId
+ORDER BY number_of_tracks DESC;
+
+SELECT
+	a.AlbumId,
+	a.Title,
+	Count(t.TrackId) number_of_tracks
+FROM Album a
+JOIN Track t ON a.AlbumId = t.AlbumId
+GROUP BY a.AlbumId, a.Title
+ORDER BY number_of_tracks DESC;
+
+-- 18. SORU: WRITE A QUERY THAT RETURNS TRACK NAME HAVING THE MINIMUM AND MAXIMUM DURATION, DISPLAY SEPERATELY
+
+SELECT Name, MIN(Milliseconds) 'DURATION'
+FROM Track
+UNION
+SELECT Name, MAX(Milliseconds)
+FROM Track;
+
+-- 19. SORU: WRITE A QUERY THAT RETURNS THE TRACKS HAVING DURATION LESS THAN THE AVERAGE DURATION
+
+SELECT *
+FROM Track
+WHERE Milliseconds &lt; (
+	SELECT ROUND(AVG(Milliseconds),2)
+	FROM Track
+	);
+	
+-- 20. SORU: WRITE A QUERY THAT RETURNS THE TOTAL NUMBER OF EACH COMPOSER’s TRACK.
+
+SELECT Composer, COUNT(*) number_of_tracks
+FROM Track
+WHERE Composer IS NOT NULL
+GROUP BY Composer
+ORDER BY number_of_tracks DESC;
+
+-- 21. SORU: WRITE A QUERY THAT RETURNS THE GENRE OF EACH TRACK.
+
+SELECT Track.Name 'Track', Genre.Name 'Genre' -- Track.Name, Track tablosundan şarkı adını alır. Genre.Name, Genre tablosundan Genre adını alır
+FROM Track 
+JOIN Genre
+ON Track.GenreId = Genre.GenreId; -- Track ve Genre tablolarındaki GenreId eşleştirilir
+
+-- 22. SORU: WRITE A QUERY THAT RETURNS THE ARTIST’s ALBUM INFO.
+
+SELECT *
+FROM Artist
+LEFT JOIN Album
+ON Album.ArtistId = Artist.ArtistId;
+
+/* 23. SORU: WRITE A QUERY THAT RETURNS THE MINIMUM DURATION OF THE TRACK IN EACH ALBUM. 
+DISPLAY ALBUMID, ALBUM TITLE AND DURATION OF THE TRACK. 
+THEN SORT THEM FROM HIGHEST TO LOWEST */
+
+SELECT Track.AlbumId, Album.Title,
+MIN(Track.Milliseconds) min_duration
+FROM Track
+JOIN Album
+ON Track.AlbumId = Album.AlbumId
+GROUP BY Track.AlbumId, Album.Title
+ORDER BY min_duration DESC;
+
+/* 24. SORU: WRITE A QUERY THAT RETURNS ALBUMS WHOSE TOTAL DURATION IS HIGHER THAN 60 MIN. 
+DISPLAY ALBUM TITLE AND THEIR DURATIONS. THEN SORT THE RESULT FROM HIGHEST TO LOWEST */
+
+SELECT Album.Title, SUM(Track.Milliseconds) total_duration
+FROM Track
+JOIN Album ON Track.AlbumId = Album.AlbumId
+GROUP BY Track.AlbumId
+HAVING total_duration &gt; 3600000
+ORDER BY total_duration DESC;
+
+/* 25. SORU: WRITE A QUERY THAT RETURNS TRACKID, TRACK NAME AND ALBUMID INFO OF THE ALBUM WHOSE
+TITLE ARE ‘Prenda Minha’, 'Heart of the Night' AND 'Out Of Exile'. */
+
+SELECT TrackId, Name, AlbumId
+FROM Track
+WHERE AlbumId IN (
+SELECT AlbumId
+FROM Album
+WHERE Title IN('Prenda Minha','Heart of the Night','Out Of Exile'));
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

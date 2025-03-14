@@ -55,4 +55,12 @@ FULL OUTER JOIN "Album" l  ON a."ArtistId" = l."ArtistId";
 SELECT t1."ArtistId" "Name", "Title", t2."AlbumId"
 FROM "Artist" t1
 JOIN "Album" t2 USING ("ArtistId")
---WHERE "Name" IS NOT NULL ;
+WHERE "Name" IS NOT NULL ;
+
+--**Album tablosundaki toplam kayıt sayısını getir.
+Select count("AlbumId") "total album number" FROM "Album"
+
+--**Her ülkenin toplam fatura sayısını getir**
+
+--**INSERT AND UPDATE***
+SELECT * FROM "Genre";

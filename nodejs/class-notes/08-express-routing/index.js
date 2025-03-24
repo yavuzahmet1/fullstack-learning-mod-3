@@ -41,6 +41,11 @@ app.get('/abc(x?)123', (req, res) => res.send("in abc(x)123"))
 app.get('/abc(x+)123', (req, res) => res.send("in abc(x+)123"))//abc123 or abcx...123
 app.get('/abc(*)123', (req, res) => res.send("in abc(*)123"))//abc123 or abcx...123
 
+//express urls supported regexp
+app.get(/xyz/, (req, res) => res.send("in /xyz/"))//url contains="xyz"
+app.get(/^\xyz/, (req, res) => res.send("in /^xyz/"))//url startwith="xyz"
+app.get(/xyz$/, (req, res) => res.send("in /xyz$/"))//url endwith="xyz"
+
 
 
 

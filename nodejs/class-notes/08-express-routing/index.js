@@ -68,16 +68,38 @@ const PORT = process.env?.PORT || 8000;
 //     })
 // })
 
-//*Response Methods
+//* Response Methods;
+
+// Informational responses (100 – 199)
+// Successful responses (200 – 299)
+// Redirection messages (300 – 399)
+// Client error responses (400 – 499)
+// Server error responses (500 – 599)
+
 app.get('/', (req, res) => {
-    // res.sendStatus(201);//created yazar
-    res.status(201);
 
-    res.send({
+    // res.sendStatus(201); // Cannot set headers after they are sent to the client
+
+    // res.status(401);
+
+    // res.send({
+    //     message: "Response Methods"
+    // });
+
+    // ShortHand usage of res.status()
+    res.status(202).send({
         message: "Response Methods"
-    })
-})
+    });
+});
 
+/* ------------------------------------------------- */
+//* Extras methods;
+
+// Download File
+app.get('/download', (req, res) => res.download('./index.js', 'algulumvergulum.js'));
+
+// todo upload file ? 
+// todo redirect ? 
 
 
 

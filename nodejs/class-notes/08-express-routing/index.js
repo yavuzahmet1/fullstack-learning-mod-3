@@ -26,11 +26,23 @@ const PORT = process.env?.PORT || 8000;
 
 
 //*app.route("/")
-app.route("/")
-    .get((req, res) => res.send({ method: "GET" }))
-    .post((req, res) => res.send({ method: "POST" }))
-    .put((req, res) => res.send({ method: "PUT" }))
-    .delete((req, res) => res.send({ method: "DELETE" }))
+// app.route("/")
+//     .get((req, res) => res.send({ method: "GET" }))
+//     .post((req, res) => res.send({ method: "POST" }))
+//     .put((req, res) => res.send({ method: "PUT" }))
+//     .delete((req, res) => res.send({ method: "DELETE" }))
+
+//*URL (Path) options
+app.get("/", (req, res) => res.send("in 'root' path"))
+app.get("/path", (req, res) => res.send("in path"))
+
+//express urls supported JokerChar
+app.get('/abc(x?)123', (req, res) => res.send("in abc(x)123"))
+app.get('/abc(x+)123', (req, res) => res.send("in abc(x+)123"))//abc123 or abcx...123
+app.get('/abc(*)123', (req, res) => res.send("in abc(*)123"))//abc123 or abcx...123
+
+
+
 
 
 app.listen(PORT, () => console.log("Running at : http://127.0.0.1" + PORT))

@@ -46,27 +46,39 @@ const PORT = process.env?.PORT || 8000;
 // app.get(/^\xyz/, (req, res) => res.send("in /^xyz/"))//url startwith="xyz"
 // app.get(/xyz$/, (req, res) => res.send("in /xyz$/"))//url endwith="xyz"
 
-//*URL Parameters
+// *URL Parameters
 
-app.get('/blogs/:blogId/:author/search', (req, res) => {
-    console.log(req)
+// app.get('/blogs/:blogId/:author/search', (req, res) => {
+//     console.log(req)
+
+//     res.send({
+//         params: req.params,
+//         blogId: req.params.blogId,
+//         author: req.params.author,
+//         query: req.query,
+//         title: req.query.title,
+//         url: {
+//             protocol: req.protocol,
+//             submain: req.subdomains,
+//             hostname: req.hostname,
+//             path: req.path,
+//             originUrls: req.originalUrl
+
+//         }
+//     })
+// })
+
+//*Response Methods
+app.get('/', (req, res) => {
+    // res.sendStatus(201);//created yazar
+    res.status(201);
 
     res.send({
-        params: req.params,
-        blogId: req.params.blogId,
-        author: req.params.author,
-        query: req.query,
-        title: req.query.title,
-        url: {
-            protocol: req.protocol,
-            submain: req.subdomains,
-            hostname: req.hostname,
-            path: req.path,
-            originUrls: req.originalUrl
-
-        }
+        message: "Response Methods"
     })
 })
+
+
 
 
 

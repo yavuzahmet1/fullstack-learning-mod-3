@@ -32,19 +32,41 @@ const PORT = process.env?.PORT || 8000;
 //     .put((req, res) => res.send({ method: "PUT" }))
 //     .delete((req, res) => res.send({ method: "DELETE" }))
 
-//*URL (Path) options
-app.get("/", (req, res) => res.send("in 'root' path"))
-app.get("/path", (req, res) => res.send("in path"))
+// //*URL (Path) options
+// app.get("/", (req, res) => res.send("in 'root' path"))
+// app.get("/path", (req, res) => res.send("in path"))
 
-//express urls supported JokerChar
-app.get('/abc(x?)123', (req, res) => res.send("in abc(x)123"))
-app.get('/abc(x+)123', (req, res) => res.send("in abc(x+)123"))//abc123 or abcx...123
-app.get('/abc(*)123', (req, res) => res.send("in abc(*)123"))//abc123 or abcx...123
+// //express urls supported JokerChar
+// app.get('/abc(x?)123', (req, res) => res.send("in abc(x)123"))
+// app.get('/abc(x+)123', (req, res) => res.send("in abc(x+)123"))//abc123 or abcx...123
+// app.get('/abc(*)123', (req, res) => res.send("in abc(*)123"))//abc123 or abcx...123
 
-//express urls supported regexp
-app.get(/xyz/, (req, res) => res.send("in /xyz/"))//url contains="xyz"
-app.get(/^\xyz/, (req, res) => res.send("in /^xyz/"))//url startwith="xyz"
-app.get(/xyz$/, (req, res) => res.send("in /xyz$/"))//url endwith="xyz"
+// //express urls supported regexp
+// app.get(/xyz/, (req, res) => res.send("in /xyz/"))//url contains="xyz"
+// app.get(/^\xyz/, (req, res) => res.send("in /^xyz/"))//url startwith="xyz"
+// app.get(/xyz$/, (req, res) => res.send("in /xyz$/"))//url endwith="xyz"
+
+//*URL Parameters
+
+app.get('/blogs/:blogId/:author/search', (req, res) => {
+    console.log(req)
+
+    res.send({
+        params: req.params,
+        blogId: req.params.blogId,
+        author: req.params.author,
+        query: req.query,
+        title: req.query.title,
+        url: {
+            protocol: req.protocol,
+            submain: req.subdomains,
+            hostname: req.hostname,
+            path: req.path,
+            originUrls: req.originalUrl
+
+        }
+    })
+})
 
 
 

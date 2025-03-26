@@ -1,0 +1,46 @@
+# .gitignore dosyası (proje kök dizinine oluşturun)
+
+# Node.js modülleri ve bağımlılıklar
+node_modules/
+.pnpm-store/
+
+# Ortam değişkenleri (çok önemli!)
+.env
+.env.local
+.env*.local
+
+# Log dosyaları
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE ve editör dosyaları
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Derlenmiş dosyalar (TypeScript kullanıyorsanız)
+dist/
+build/
+*.js.map
+*.tsbuildinfo
+
+# Test ve kapsam dosyaları
+coverage/
+.nyc_output/
+
+# Paket yöneticisi kilit dosyaları
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db

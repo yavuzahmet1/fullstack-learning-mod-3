@@ -26,3 +26,8 @@ server.listen(port, hostname, () => {
 // avascript single thread, yani aynı anda sadece ve sadece tek bir işlem yapabilir. 
 
 // peki bu işlemler bittiğinde bunun sıralaması nasıl yapılıyor? İşte burada devreye event-loop girer
+
+// Olay Döngüsü (Event-Loop):
+// Event-Loop, callback, single thread..
+// Restoran - garson metaforumuza tekrar döneceğim burada. Restoranımız çalışma ortamı ve yalnızca tek bir garson çalışıyor (Single Thread) bu garsonumuz önce 1. masaya ait siparişleri aldı ve siparişi mutfağa bildirdi (Thread Pool). O siparişlerin hazır olmasını beklemeden (Non-Blocking) 2. masaya ait siparişleri aldı ve yine mutfağa bildirdi. Bu sırada kendisine 1. masanın yemeğinin hazır olduğu bildirildi (callback).
+// İşte bahsettiğimiz Node.js'in asenkron yapısının özeti budur. Node.js için temel amaç mümkün olan en kısa sürede beklemeden fazla sayıda işlem yapmaktır.

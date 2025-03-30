@@ -5,3 +5,17 @@ module.exports = path.dirname(process.mainModule.filename);
 The important thing is that you might get a deprecation warning for that code - in that case, you can simply switch to this code:
 
 module.exports = path.dirname(require.main.filename);
+
+aşağıdakilerde Node.js in başlangıç dosyasını verir.
+const path = require('path');
+module.exports = path.dirname(process.argv[1]);
+
+eğer modülün kendi dizinini istiyorsak;
+module.exports = __dirname;
+
+Not:
+require.main.filename, uygulamanın başladığı ana dosyanın yolunu verir.
+
+process.argv[1], Node.js'in çalıştırdığı script dosyasını gösterir (genellikle require.main.filename ile aynıdır).
+
+__dirname ise current module'ün dizinini verir (farklı olabilir).

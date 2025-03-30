@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #e74c3c;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive tasarım */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                width: 80%;
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Page not found!</h1>
+    <div class="container">
+        <h1>Page Not Found!</h1>
+        <p>The page you are looking for does not exist.</p>
+        <a href="/" class="back-btn">Go Back to Home</a>
+    </div>
 </body>
 </html>

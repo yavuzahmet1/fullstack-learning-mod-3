@@ -21,3 +21,5 @@ https://sequelize.org/
 ### ERD:
 
 ![ERD](./erdTodoAPI.png)
+
+IRD diagramları backendci için önemli

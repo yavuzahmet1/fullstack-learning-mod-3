@@ -89,6 +89,23 @@ sequelize.authenticate()
 
 /* ------------------------------------------------------- */
 // ROUTERS:
+const router=express.Router();
+
+//*Create
+router.post("/todos",async (req,res)=>{
+const todo= await Todo.create({
+    title:"todo 1",
+    desription:"des",
+    priority:0,
+    isDone:false
+})
+
+    res.status(201).send({
+        error:false
+    })
+})
+
+app.use(router)
 
 
 /* ------------------------------------------------------- */

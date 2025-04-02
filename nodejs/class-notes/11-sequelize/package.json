@@ -1,5 +1,5 @@
 {
-  "name": "11-sequelize",
+  "name": "10-models_sequelize_todo",
   "version": "1.0.0",
   "description": "## What? Why?",
   "main": "app.js",
@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

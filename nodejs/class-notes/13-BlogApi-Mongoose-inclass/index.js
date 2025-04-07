@@ -21,11 +21,17 @@ require('express-async-errors');
 require('./src/dbConnection')();
 
 /*------------------------------------------------------- */
-// Routes:
+// Main Route:
 app.all('/', (req, res) => res.send('Welcome to Blog API'));
 
+// Blog Route
+app.use(require('./src/routes/blog.router'));
+
+
+/*------------------------------------------------------- */
 
 // Error Handler:
 app.use(require('./src/middlewares/errorHandler'));
 /*------------------------------------------------------- */
+
 app.listen(PORT, () => console.log('Running at http://127.0.0.1:' + PORT));

@@ -17,4 +17,7 @@ router.route("/:id")
     .patch(user.update)
     .delete(user.delete);
 
+router.post('/login', user.login);
+router.all('/logout', user.logout);
+
 module.exports = router;

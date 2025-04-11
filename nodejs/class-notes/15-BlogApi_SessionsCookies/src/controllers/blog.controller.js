@@ -57,7 +57,7 @@ module.exports.blogCategory = {
 
         // const result = await BlogCategory.updateOne({ _id: req.params.id }, req.body);
         // const result = await BlogCategory.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
-        const result = await BlogCategory.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const result = await BlogCategory.findByIdAndUpdate(req.params.id, req.body, { new: true, upsert: true });
 
         res.status(200).send({
             error: false,
@@ -86,7 +86,7 @@ module.exports.blogPost = {
     list: async (req, res) => {
 
         // BlogPost.find({...filter}, {select})
-        const result = await BlogPost.find({}, { title: 1, content: 1, categoryId: true, userId: true }).populate('categoryId');
+        const result = await BlogPost.find({}, { title: 1, content: 1, categoryId: true, userId: true }).populate(['categoryId', 'userId']);
 
         res.status(200).send({
             error: false,
@@ -96,6 +96,9 @@ module.exports.blogPost = {
 
     create: async (req, res) => {
 
+        //* add logged in user id for creation of blogpost.
+        req.body.userId = req.user._id
+
         const result = await BlogPost.create(req.body);
 
         res.status(201).send({
@@ -104,13 +107,11 @@ module.exports.blogPost = {
         });
     },
 
-    // Todo below controllers and their routers
-
     read: async (req, res) => {
 
         // const result = await BlogPost.findOne({...filter});
         // const result = await BlogPost.findOne({ _id: req.params.id });
-        const result = await BlogPost.findById(req.params.id, { title: 1, content: 1, categoryId: true }).populate('categoryId');
+        const result = await BlogPost.findById(req.params.id, { title: 1, content: 1, categoryId: true }).populate(['categoryId', 'userId']);
 
         res.status(200).send({
             error: false,

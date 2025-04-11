@@ -19,10 +19,33 @@ require('express-async-errors');
 // const dbConnection = require('./src/dbConnection');
 // dbConnection();
 require('./src/dbConnection')();
+/*------------------------------------------------------- */
+//* Middlewares
+
+// SessionCookie
+// https://expressjs.com/en/resources/middleware/cookie-session.html
+// $ npm i cookie-session
+
+const session = require('cookie-session');
+
+app.use(session({
+    secret: process.env.PASS_SALT,
+    // maxAge: 1000 * 60 * 60 * 24 * 3 // 3 days in miliSeconds // now this is a cookie.
+}));
+
+
+// User Control (check user data from session)
+app.use(require('./src/middlewares/userControl'));
 
 /*------------------------------------------------------- */
 // Main Route:
-app.all('/', (req, res) => res.send('Welcome to Blog API'));
+app.all('/', (req, res) => {
+    res.send({
+        message: 'Welcome to Blog API',
+        session: req.session,
+        user: req.user
+    })
+});
 
 // Blog Route
 app.use('/blogs', require('./src/routes/blog.router'));

@@ -5,20 +5,7 @@
 ------------------------------------------------------- */
 const mongoose = require('mongoose');
 
-// Password Encryption:
-// https://nodejs.org/docs/latest/api/crypto.html#cryptopbkdf2syncpassword-salt-iterations-keylen-digest
-
-const crypto = require('node:crypto');
-
-const passwordEncrypte = (password) => {
-
-    const salt = 'asdfkash24323r983gakjhf92813yrsdfaskj';
-    const iteration = 100000;
-    const keylen = 32; // write 32 for 64
-    const digest = 'sha512';
-
-    return crypto.pbkdf2Sync(password, salt, iteration, keylen, digest).toString('hex');
-}
+const passwordEncrypte = require('../utils/passwordEncrypte');
 
 const UserSchema = new mongoose.Schema({
 

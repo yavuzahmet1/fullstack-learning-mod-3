@@ -118,10 +118,11 @@ age: Number
 const User = mongoose.model('User', userSchema);
 
 ```Sorgu Karşılaştırması
-İşlem	Sequelize Sözdizimi	Mongoose Sözdizimi
-Kayıt Bulma	User.findOne({ where: { id: 1 } })	User.findOne({ _id: 1 })
-İlişkiler	hasMany(), belongsTo()	populate()
-Transaction	Tam destek	Kısıtlı destek
+| İşlem         | Sequelize Sözdizimi                     | Mongoose Sözdizimi             |
+|---------------|----------------------------------------|--------------------------------|
+| **Kayıt Bulma** | `User.findOne({ where: { id: 1 } })`   | `User.findOne({ _id: 1 })`     |
+| **İlişkiler**   | `hasMany()`, `belongsTo()`             | `populate()`                   |
+| **Transaction** | Tam destek                             | Kısıtlı destek                 |
 ```
 
 Avantajlar ve Dezavantajlar

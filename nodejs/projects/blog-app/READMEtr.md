@@ -89,3 +89,72 @@ ORM vs. ODM
     ORM: İlişkisel veritabanları (MySQL, PostgreSQL) için kullanılır.
 
     ODM: NoSQL (MongoDB gibi) için kullanılır (Örn: Mongoose).
+
+# Sequelize vs. Mongoose: Temel Farklar
+
+## 1. Veritabanı Desteği
+
+| Özellik             | Sequelize                      | Mongoose                     |
+| ------------------- | ------------------------------ | ---------------------------- |
+| **Veritabanı Türü** | İlişkisel (SQL)                | NoSQL (MongoDB)              |
+| **Desteklenen DB**  | MySQL, PostgreSQL, SQLite      | Sadece MongoDB               |
+| **Sınıflandırma**   | ORM (Object-Relational Mapper) | ODM (Object-Document Mapper) |
+
+## 2. Veri Modelleme
+
+### Sequelize (SQL Modeli)
+
+```javascript
+const User = sequelize.define("User", {
+  name: { type: DataTypes.STRING },
+  age: { type: DataTypes.INTEGER },
+});
+```
+
+const userSchema = new mongoose.Schema({
+name: String,
+age: Number
+});
+const User = mongoose.model('User', userSchema);
+
+```Sorgu Karşılaştırması
+İşlem	Sequelize Sözdizimi	Mongoose Sözdizimi
+Kayıt Bulma	User.findOne({ where: { id: 1 } })	User.findOne({ _id: 1 })
+İlişkiler	hasMany(), belongsTo()	populate()
+Transaction	Tam destek	Kısıtlı destek
+```
+
+Avantajlar ve Dezavantajlar
+Sequelize
+
+✔ Artıları:
+
+    Güçlü transaction desteği
+
+    Karmaşık SQL sorguları için optimize
+
+    Veri bütünlüğü (foreign key vs.)
+
+✖ Eksileri:
+
+    SQL bilgisi gerektirebilir
+
+    MongoDB ile çalışmaz
+
+Mongoose
+
+✔ Artıları:
+
+    JSON yapısıyla doğal uyum
+
+    Hızlı prototipleme
+
+    Esnek şema (schema-less) desteği
+
+✖ Eksileri:
+
+    Sadece MongoDB
+
+    Transaction desteği kısıtlı
+
+İlişkisel veri gerekiyorsa Sequelize, hızlı ve esnek yapı gerekiyorsa Mongoose tercih edin.

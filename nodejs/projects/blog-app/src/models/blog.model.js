@@ -38,7 +38,7 @@ const blogPost = new mongoose.Schema({
         required: true
     }
 }, {
-    collation: "blogPosts",
+    collection: "blogPosts",
     timestamps: true
 })
 const BlogPost = mongoose.model("BlogPost", blogPost);

@@ -16,9 +16,14 @@ require("express-async-errors")
 // dbConnection()
 require("./src/dbConnection")();
 
+//main-route
 app.all("/", (req, res) => res.send("Welcome To Blog App"))
 
+//blog-routes
+app.use(require("./src/routes/blog.router"))
 
+
+//error handler
 app.use(require('./src/middlewares/errorHanler'))
 
 app.listen(PORT, () => console.log(`Running at at http://127.0.0.1:${PORT}`))

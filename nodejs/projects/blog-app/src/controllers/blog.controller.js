@@ -33,5 +33,16 @@ module.exports = {
             // new: await BlogCategory.findById(req.params.id) findOneAndUpdate kullanılırsa gerek yok
         })
     },
+    delete: async (req, res) => {
+
+        const result = await BlogCategory.deleteOne({ _id: req.params.id });
+
+        if (result?.deletedCount) {
+            res.sendStatus(204);
+        } else {
+            res.errorStatus = 404;
+            throw new Error("Data is not found or already deleted")
+        }
+    },
 
 }

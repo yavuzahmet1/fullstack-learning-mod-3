@@ -7,5 +7,12 @@ module.exports = {
             error: false,
             result
         })
+    },
+    create: async (req, res) => {
+        const result = await BlogCategory.create(req.body);
+        res.status(201).send({
+            error: false,
+            result
+        })
     }
 }

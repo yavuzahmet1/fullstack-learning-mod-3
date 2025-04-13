@@ -184,3 +184,82 @@ This JSON output represents the result of a MongoDB update operation (e.g., `upd
 | `upsertedId`    | `ObjectId`\|`null` | Upsert ile yeni doküman oluşturulduysa onun `_id` değeri                             |
 | `upsertedCount` | `number`           | Upsert ile oluşturulan doküman sayısı                                                |
 | `matchedCount`  | `number`           | Filtreyle eşleşen doküman sayısı                                                     |
+
+# 📚 MongoDB `populate()` Rehberi
+
+## 🧩 Temel Kavram
+
+```javascript
+// Şema Tanımı:
+const Post = new Schema({
+  title: String,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User' // 🔗 Referans tanımı
+  }
+});
+
+🎯 Ne İşe Yarar?
+
+    ID ↔ Doküman Dönüşümü
+    ["5f8d8a7b2f3c1e2b3c4d5e6f"] → { _id: "...", name: "Ayşe", email: "ayse@example.com" }
+
+✨ Temel Kullanım
+
+// 1️⃣ Basit Populate
+Post.find().populate('author');
+
+// 2️⃣ Belirli Alanlarla
+Post.find().populate({
+  path: 'author',
+  select: 'name -_id' // 📌 Sadece name, ID hariç
+});
+
+🏗️ İleri Seviye Özellikler
+
+Order.find()
+  .populate('customer') // 👨💼
+  .populate('products'); // 🛍️
+
+🪆 İç İçe Populate
+
+Blog.find()
+  .populate({
+    path: 'comments',
+    populate: {
+      path: 'user', // 💬 Yorum sahibi
+      model: 'User'
+    }
+  });
+
+⚡ Performans İpuçları
+Durum	Tavsiye
+Büyük veri	limit() ile kısıtlama yapın
+Gereksiz alanlar	select() ile sadece ihtiyacınız olanları getirin
+Sık erişilen veri	🔄 Referans yerine gömülü doküman kullanmayı düşünün
+```
+
+🚨 Sık Karşılaşılan Hatalar
+
+// ❌ Yanlış:
+Post.find().populate('yazar'); // ref tanımıyla uyuşmuyor
+
+// ✅ Doğru:
+Post.find().populate('author'); // Şemada belirtilen referans adı
+
+🌍 Gerçek Dünya Örneği
+
+// 🏷️ Etiketleriyle birlikte ürünleri getirme
+Product.find()
+.populate({
+path: 'tags',
+match: { isActive: true } // 🏷️ Sadece aktif etiketler
+});
+
+📊 SQL vs MongoDB
+Özellik SQL JOIN MongoDB populate()
+Mantık Tablo birleştirme Referans çözme
+Performans Büyük tablolarda yavaş İndekslerle optimize edilebilir
+Esneklik Katı şema Dinamik yapı
+
+💡 Pro Tip: populate() asenkron çalışmaz, sorgu zincirinin parçasıdır!

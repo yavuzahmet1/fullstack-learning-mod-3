@@ -7,8 +7,8 @@ router.route("/blogs")
 
 router.route("/blogs/:id")
     .get(blogCategory.read)
-
-
-
+    .put(blogCategory.update)
+    .patch(blogCategory.update)
+    .delete(blogCategory.delete)
 
 module.exports = router;

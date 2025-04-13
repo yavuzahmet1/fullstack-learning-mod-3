@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { blogCategory } = require("../controllers/blog.controller");
+const { blogCategory, blogPost } = require("../controllers/blog.controller");
 
 router.route("/blogs")
     .get(blogCategory.list)
@@ -10,5 +10,15 @@ router.route("/blogs/:id")
     .put(blogCategory.update)
     .patch(blogCategory.update)
     .delete(blogCategory.delete)
+
+router.route("/blogs")
+    .get(blogPost.list)
+    .post(blogPost.create);
+
+router.route("/blogs/:id")
+    .get(blogPost.read)
+    .put(blogPost.update)
+    .patch(blogPost.update)
+    .delete(blogPost.delete)
 
 module.exports = router;

@@ -5,4 +5,10 @@ router.route("/blogs")
     .get(blogCategory.list)
     .post(blogCategory.create);
 
+router.route("/blogs/:id")
+    .get(blogCategory.read)
+
+
+
+
 module.exports = router;

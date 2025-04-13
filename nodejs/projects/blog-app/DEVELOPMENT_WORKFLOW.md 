@@ -1,0 +1,130 @@
+# Git Commit Kuralları
+
+## 1. Commit Mesajı Formatı
+```
+<type>(<scope>): <konu>
+<BOŞ SATIR>
+[<detaylı açıklama>]
+```
+
+## 2. Type Listesi
+| Tip       | Açıklama                  |
+|-----------|---------------------------|
+| `feat`    | Yeni özellik              |
+| `fix`     | Hata düzeltme             |
+| `refactor`| Kod iyileştirme           |
+
+## 3. Örnekler
+```bash
+# Yeni özellik
+feat(auth): add password reset endpoint
+
+# Hata düzeltme
+fix(profile): correct avatar upload validation
+
+# Yapısal değişiklik
+refactor(router): migrate to Express 5.x
+```
+
+## 4. Yönergeler
+- Başlık max 50 karakter
+- Detay açıklamaları 72 karakterde wrap edilmeli
+- `BREAKING CHANGE:` ile büyük değişiklikleri belirtin
+
+1. Yeni Method Ekleme Durumu
+
+feat(scope): add [methodName] for [purpose]
+
+- Added [description]
+- Uses [technology/tool]
+- Impacts [affected areas]
+
+    Örnek (BlogController'a delete eklendiğinde):
+
+    feat(blog.controller): add delete method for categories
+
+    - Implements hard deletion with deleteOne
+    - Returns 204 on success
+    - Handles 404 for missing documents
+
+    feat → Yeni fonksiyonelite olduğunu belirtir
+
+    (scope) → Değişikliğin nerede yapıldığını açıklar
+
+    Açıklama satırları → Neden ve nasıl eklendiğini dokümante eder
+
+2. Mevcut Özellik Güncelleme
+
+refactor(scope): improve [featureName]
+
+- Changed [old] → [new]
+- Optimized [specific part]
+- Fixes [issue] (varsa)
+
+    Örnek (updateOne → findOneAndUpdate değişimi):
+
+    refactor(blog.controller): optimize update method
+
+    - Replaced updateOne with findOneAndUpdate
+    - Added { new: true } to return updated doc
+    - Removes redundant findById call   
+
+    refactor → Performans/okunabilirlik iyileştirmesi olduğunu gösterir
+
+    Değişikliğin faydası mutlaka belirtilmeli
+
+3. Route Ekleme/Güncelleme
+
+feat(routes): [HTTP Method] [endpoint]
+
+- Maps to [controller.method]
+- Supports [functionality]
+
+## Commit Type Prefixleri
+
+| Prefix       | Kullanım Alanı                          | Örnek Kullanım                     |
+|--------------|----------------------------------------|-----------------------------------|
+| `feat`       | Yeni özellik eklenmesi                 | `feat(auth): add OAuth login`     |
+| `fix`        | Hata düzeltme                          | `fix(profile): correct age validation` |
+| `refactor`   | Performans/okunabilirlik iyileştirmesi | `refactor(api): optimize queries`  |
+| `docs`       | Dokümantasyon güncellemesi             | `docs(readme): add deployment steps` |
+| `chore`      | Tooling/config değişiklikleri          | `chore: update eslint config`      |
+| `style`      | Formatlama (boşluk, noktalama vb.)     | `style(components): fix indentation` |
+| `test`       | Test ekleme/düzeltme                   | `test(utils): add date validator tests` |
+| `ci`         | CI/CD pipeline değişiklikleri          | `ci: add GitHub Actions workflow`  |
+| `perf`       | Performans iyileştirmesi               | `perf(images): add lazy loading`  |
+| `build`      | Build sistemine ait değişiklikler      | `build: update webpack to v5`      |
+| `revert`     | Geri alınan commit                     | `revert: fix(core): remove buggy patch` |
+
+#Başlık → Max 50 karakter
+feat(blog.controller): add delete method  
+^    ^                  ^  
+|    |                  |  
+Type Scope              Açıklama  
+
+#Body → 72 karakter wrap
+- Her madde tek bir değişikliği anlatır
+- Neden? ve Nasıl? sorularını cevaplar
+
+#Footer (Opsiyonel):
+Closes #123 (Issue referansı)  
+BREAKING CHANGE: Varsa belirtilir  
+
+Özel Durumlar
+
+    Çoklu Değişiklikler → Ayrı commit'lerde yapın
+
+        Örneğin: Route ve controller eklentileri ayrı olsun
+
+    Atomic Commit → Her commit tek bir iş yapsın
+
+        ❌ "Fixed bugs and updated styles"
+
+        ✅ "fix(auth): handle invalid token error"
+
+        ✅ "style(buttons): update primary color"
+
+    Emoji Kullanımı (Opsiyonel):
+    ✨ feat: Add new animation
+    🐛 fix: Login redirect loop
+    ♻️ refactor: Payment service

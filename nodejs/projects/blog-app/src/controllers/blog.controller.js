@@ -23,5 +23,15 @@ module.exports = {
             result
         })
     },
+    update: async (req, res) => {
+        // const result = await BlogCategory.updateOne({...filter},{...data},{...option});
+        // const result = await BlogCategory.updateOne({ _id: req.params.id }, req.body);
+        const result = await BlogCategory.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
+        res.status(200).send({
+            error: false,
+            result,
+            // new: await BlogCategory.findById(req.params.id) findOneAndUpdate kullanılırsa gerek yok
+        })
+    },
 
 }

@@ -159,3 +159,28 @@ Mongoose
     Transaction desteği kısıtlı
 
 İlişkisel veri gerekiyorsa Sequelize, hızlı ve esnek yapı gerekiyorsa Mongoose tercih edin.
+
+# MongoDB Update Operation Response Breakdown
+
+This JSON output represents the result of a MongoDB update operation (e.g., `updateOne` or `updateMany`):
+
+```json
+{
+  "error": false,
+  "result": {
+    "acknowledged": true,
+    "modifiedCount": 1,
+    "upsertedId": null,
+    "upsertedCount": 0,
+    "matchedCount": 1
+  }
+}
+```
+
+| Alan            | Tür                | Açıklama                                                                             |
+| --------------- | ------------------ | ------------------------------------------------------------------------------------ |
+| `acknowledged`  | `boolean`          | İşlemin MongoDB tarafından başarıyla alınıp işlendiğini gösterir (`true` = başarılı) |
+| `modifiedCount` | `number`           | Gerçekte değiştirilen doküman sayısı                                                 |
+| `upsertedId`    | `ObjectId`\|`null` | Upsert ile yeni doküman oluşturulduysa onun `_id` değeri                             |
+| `upsertedCount` | `number`           | Upsert ile oluşturulan doküman sayısı                                                |
+| `matchedCount`  | `number`           | Filtreyle eşleşen doküman sayısı                                                     |

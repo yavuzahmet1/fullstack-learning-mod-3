@@ -93,3 +93,42 @@ Related Concepts
     ODM (Object-Document Mapper): Like ORM but for NoSQL (e.g., Mongoose for MongoDB).
 
     Active Record Pattern: ORM implementation where objects represent database rows (e.g., Ruby on Rails).
+
+# MongoDB Update Operation Response Breakdown
+
+This JSON output represents the result of a MongoDB update operation (e.g., `updateOne` or `updateMany`):
+
+```json
+{
+  "error": false,
+  "result": {
+    "acknowledged": true,
+    "modifiedCount": 1,
+    "upsertedId": null,
+    "upsertedCount": 0,
+    "matchedCount": 1
+  }
+}
+```
+
+1. Successful Update=> Found 1 matching document and updated it
+   {
+   "modifiedCount": 1,
+   "matchedCount": 1
+   }
+2. No Changes Needed=>Found matching document but no values were changed (already had target values)
+   {
+   "modifiedCount": 0,
+   "matchedCount": 1
+   }
+3. No Matching Document=>No documents matched your filter criteria
+   {
+   "modifiedCount": 0,
+   "matchedCount": 0
+   }
+4. Upsert Creation=>No matching doc found → created new document (requires upsert: true)
+   {
+   "upsertedId": ObjectId("65a1b2c3d4e5f6a7b8c9d0e1"),
+   "upsertedCount": 1,
+   "modifiedCount": 0
+   }

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const blogCategory = require("../controllers/blog.controller");
+const { blogCategory } = require("../controllers/blog.controller");
 
 router.route("/blogs")
     .get(blogCategory.list)

@@ -49,7 +49,7 @@ module.exports.blogCategory = {
 
 module.exports.blogPost = {
     list: async (req, res) => {
-        const result = await BlogPost.find();
+        const result = await BlogPost.find().populate("categoryId");
         res.status(200).send({
             error: false,
             result

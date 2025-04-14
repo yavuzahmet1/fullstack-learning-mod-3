@@ -1,7 +1,19 @@
 "use strict"
 
 const mongoose = require("mongoose")
+const cyripto = require("node:crypto");
 
+const passwordEncrypte = (password) => {
+    const salt = "adakdasjdlkajsdlajsldjasldjl";
+    const iteration = 10000;
+    const keylen = 32; //write 32 for 64
+    const digest = "sha512";
+
+
+    return cyripto.pbkdf2Sync(password, salt, iteration, keylen, digest).toString("hex")
+}
+
+console.log(passwordEncrypte("test"))
 const UserSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -12,7 +24,8 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        set: (pass) => { return passwordEncrypte(pass) }
     },
     firstName: String,
     lastName: String

@@ -22,6 +22,8 @@ app.all("/", (req, res) => res.send("Welcome To Blog App"))
 //blog-routes
 app.use(require("./src/routes/blog.router"))
 
+app.use(require("./src/routes/user.router"))
+
 
 //error handler
 app.use(require('./src/middlewares/errorHanler'))

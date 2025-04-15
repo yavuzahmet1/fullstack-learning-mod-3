@@ -20,9 +20,9 @@ require("./src/dbConnection")();
 app.all("/", (req, res) => res.send("Welcome To Blog App"))
 
 //blog-routes
-app.use(require("./src/routes/blog.router"))
+app.use("/blogs", require("./src/routes/blog.router"))
 
-app.use(require("./src/routes/user.router"))
+app.use("/users", require("./src/routes/user.router"))
 
 
 //error handler

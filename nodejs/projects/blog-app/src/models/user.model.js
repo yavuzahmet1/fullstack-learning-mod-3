@@ -19,7 +19,18 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
         unique: true,
-        trim: true
+        trim: true,
+        // validate: (email) => {
+        //     if (email.includes('@') && email.includes('.')) {
+        //         return true
+        //     }
+        //     return new Error("invalid e-mail adres")
+        // }
+        validate: [(email) => {
+
+            return email.includes('@') && email.includes('.')
+        }, "invalid email address"]
+
     },
     password: {
         type: String,

@@ -9,8 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "dependencies": {
+    "cookie-session": "^2.1.0",
     "dotenv": "^16.5.0",
     "express": "4",
     "express-async-errors": "^3.1.1",

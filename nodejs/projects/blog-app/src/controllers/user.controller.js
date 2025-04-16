@@ -47,4 +47,24 @@ module.exports = {
         }
     },
 
+    login: async (req, res) => {
+        const { email, password } = req.body;
+        if (email && password) {
+
+            const user = await User.findOne({ email })
+
+            if (user) {
+                if (user.password == password) {
+                    res.status(200).send({
+                        error: false,
+                        result: 'OK'
+                    })
+                } else {
+                    res.customErrorCode = 401;
+                    throw new Error("Wrong email or password")
+                }
+            }
+
+        }
+    }
 }

@@ -17,7 +17,10 @@ require("express-async-errors")
 require("./src/dbConnection")();
 
 //main-route
-app.all("/", (req, res) => res.send("Welcome To Blog App"))
+app.all("/", (req, res) => {
+    console.log(req.session)
+    res.send("Welcome To Blog App")
+});
 
 //blog-routes
 app.use("/blogs", require("./src/routes/blog.router"))

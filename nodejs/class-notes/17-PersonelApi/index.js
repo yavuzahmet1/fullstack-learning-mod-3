@@ -13,6 +13,7 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 8000;
 
+
 /* ------------------------------------------------------- */
 
 // Middlewares:
@@ -26,7 +27,7 @@ app.use(session({
     secret: process.env.SECRET_KEY,
 }))
 
-
+require("./src/configs/dbConnection")
 
 // Query Handler:
 app.use(require('./src/middlewares/queryHandler'))

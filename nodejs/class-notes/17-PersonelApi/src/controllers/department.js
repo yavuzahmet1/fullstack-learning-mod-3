@@ -30,7 +30,7 @@ module.exports = {
 
     },
     update: async (req, res) => {
-        const result = await Department.updateOne({ _id: req.params.id }, req.body)
+        const result = await Department.updateOne({ _id: req.params.id }, req.body, { runValidators: true, new: true })
         res.status(202).send({
             error: false,
             result

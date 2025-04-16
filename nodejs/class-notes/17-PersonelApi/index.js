@@ -42,7 +42,9 @@ app.all('/', (req, res) => {
     res.send({
         message: 'WELCOME TO PERSONNEL API',
     })
-})
+});
+
+app.use("/departments", require("./src/routes/department"))
 
 
 // Error Handler:

@@ -263,3 +263,47 @@ Performans Büyük tablolarda yavaş İndekslerle optimize edilebilir
 Esneklik Katı şema Dinamik yapı
 
 💡 Pro Tip: populate() asenkron çalışmaz, sorgu zincirinin parçasıdır!
+
+##SESSION
+
+cookie-session Modülü:
+
+        Bu, Express için basit bir cookie tabanlı session middleware'idir.
+
+        Session verilerini doğrudan client-side cookie'de saklar (şifrelenmiş olarak).
+
+    app.use():
+
+        Middleware'i Express uygulamasına ekler.
+
+        Tüm gelen isteklerde bu session kontrolü yapılacaktır.
+
+    Session Konfigürasyonu:
+
+        secret:
+
+            Cookie'leri şifrelemek için kullanılan gizli anahtar.
+
+            process.env.PASS_SALT ile ortam değişkenlerinden alınıyor (güvenlik için iyi bir uygulama).
+
+        maxAge:
+
+            Cookie'nin geçerli olacağı maksimum süre (milisecond cinsinden).
+
+            Bu örnekte 3 gün (1000ms * 60sn * 60dk * 24sa * 3gün) olarak ayarlanmış.
+
+    Çalışma Şekli:
+
+        Kullanıcı ilk isteği yaptığında bir session oluşturulur.
+
+        Session verileri şifrelenerek kullanıcının tarayıcısına cookie olarak gönderilir.
+
+        Sonraki isteklerde tarayıcı bu cookie'yi gönderir ve sunucu şifreyi çözerek session verilerine ulaşır.
+
+    Not:
+
+        Yorumda belirtildiği gibi, session'a süre verdiğinizde teknik olarak "cookie" haline geliyor.
+
+        Session verileri sunucuda değil, kullanıcının tarayıcısında saklanır (şifrelenmiş olarak).
+
+Bu yapı, özellikle sunucu tarafında session state tutmak istemediğiniz basit uygulamalar için kullanışlıdır, ancak büyük veriler için uygun değildir (cookie boyut sınırları vardır).

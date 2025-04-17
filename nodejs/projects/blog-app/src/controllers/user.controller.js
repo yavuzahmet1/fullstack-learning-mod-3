@@ -1,6 +1,7 @@
 "use strict";
 
 const User = require("../models/user.model");
+const passwordEncrypte = require("../utils/passwordEncrypte");
 
 module.exports = {
   list: async (req, res) => {
@@ -53,10 +54,19 @@ module.exports = {
   login: async (req, res) => {
     const { email, password } = req.body;
     if (email && password) {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email }); //Eşleşen ilk kaydı döndürür (eşleşme yoksa null). email değişkeniyle eşleşen kullanıcıyı arar (örneğin req.body.email).
 
       if (user) {
-        if (user.password == password) {
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (isMatch) {
+          //   req.session = {
+          //     email: user.email,
+          //     _id: user._id,
+          //   };
+
+          req.session._id = user._id;
+          req.session.email = user.email;
+
           res.status(200).send({
             error: false,
             result: "OK",

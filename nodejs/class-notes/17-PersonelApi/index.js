@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 /* -------------------------------------------------------
     EXPRESS - Personnel API
 ------------------------------------------------------- */
@@ -13,45 +13,45 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 8000;
 
-
 /* ------------------------------------------------------- */
 
 // Middlewares:
-app.use(express.json())
-require('express-async-errors')
+app.use(express.json());
+require("express-async-errors");
 
 // Session-Cookies
-const session = require('cookie-session');
+const session = require("cookie-session");
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.SECRET_KEY,
-}))
+  })
+);
 
-require("./src/configs/dbConnection")
+require("./src/configs/dbConnection");
 
 // Query Handler:
-app.use(require('./src/middlewares/queryHandler'))
-
-
-
+app.use(require("./src/middlewares/queryHandler"));
 
 /* ------------------------------------------------------- */
 // Routes:
-app.all('/', (req, res) => {
-
-    res.send({
-        message: 'WELCOME TO PERSONNEL API',
-    })
+app.all("/", (req, res) => {
+  res.send({
+    message: "WELCOME TO PERSONNEL API",
+  });
 });
 
-app.use("/departments", require("./src/routes/department"))
+app.use("/departments", require("./src/routes/department"));
 
+app.use("/tokens", require("./src/routes/token"));
+
+app.use("/auth", require("./src/routes/auth"));
 
 // Error Handler:
-app.use(require('./src/middlewares/errorHandler'))
+app.use(require("./src/middlewares/errorHandler"));
 
 // RUN SERVER:
-app.listen(PORT, () => console.log('Running: http://127.0.0.1:' + PORT))
+app.listen(PORT, () => console.log("Running: http://127.0.0.1:" + PORT));
 
 /* ------------------------------------------------------- */
 //! Syncronization : Run it only once.

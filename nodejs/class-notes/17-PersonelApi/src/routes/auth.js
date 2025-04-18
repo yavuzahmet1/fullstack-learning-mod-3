@@ -1,17 +1,11 @@
 "use strict";
-/* -------------------------------------------------------
-    EXPRESSJS - Personnel API
-------------------------------------------------------- */
 
-const router = require('express').Router()
+const router = require("express").Router();
 
-const { login, logout } = require('../controllers/auth')
+const { login, logout } = require("../controllers/auth");
 
-// URL : /auth
+router.post("/login", login);
 
-router.post('/login', login)
+router.all("/logout", logout);
 
-router.all('/logout', logout)
-
-
-module.exports = router
+module.exports = router;

@@ -15,7 +15,8 @@ module.exports = {
   },
   create: async (req, res) => {
     const result = await Department.create(req.body);
-
+    // bir departmanda bir lead olur
+    //todo: eğer yeni bir lead oluşturulursa eski lead değerini false yap
     res.status(201).send({
       error: false,
       result,
@@ -29,6 +30,7 @@ module.exports = {
     });
   },
   update: async (req, res) => {
+    //todo:eğerki bir update olursa bu update lead olursa eski lead değerini false yap
     const result = await Department.updateOne(
       { _id: req.params.id },
       req.body,
@@ -47,3 +49,5 @@ module.exports = {
     });
   },
 };
+
+//todo:ilgili deparmandaki tüm kişileri listeleme query olarak filter değilde buna ait controller olsun istiyoruz
